@@ -1,0 +1,43 @@
+# Parent class
+class Item:
+    def __init__(self, title: str, author: str):
+        """Constructor to initialize title and author of the item."""
+        self.title = title
+        self.author = author
+
+    def display_info(self):
+        """Method to display the title and author of the item."""
+        print(f"Title: {self.title}, Author: {self.author}")
+
+# Child class Book
+class Book(Item):
+    def __init__(self, title: str, author: str, pages: int):
+        """Constructor to initialize title, author, and pages of the book."""
+        super().__init__(title, author)
+        self.pages = pages
+
+    def additional_info(self):
+        """Method to display the additional information (number of pages)."""
+        print(f"Pages: {self.pages}")
+
+# Child class Magazine
+class Magazine(Item):
+    def __init__(self, title: str, author: str, issue_number: int):
+        """Constructor to initialize title, author, and issue number of the magazine."""
+        super().__init__(title, author)
+        self.issue_number = issue_number
+
+    def additional_info(self):
+        """Method to display the additional information (issue number)."""
+        print(f"Issue Number: {self.issue_number}")
+
+# Example usage:
+# Creating a Book object
+book1 = Book("1984", "George Orwell", 328)
+book1.display_info()  # Inherited method from Item
+book1.additional_info()  # Method from Book
+
+# Creating a Magazine object
+magazine1 = Magazine("National Geographic", "Multiple Authors", 202)
+magazine1.display_info()  # Inherited method from Item
+magazine1.additional_info()  # Method from Magazine
